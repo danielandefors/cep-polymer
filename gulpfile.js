@@ -21,7 +21,7 @@ gulp.task('clean', function(cb) {
 
 gulp.task('default', ['clean'], function(cb) {
   return runSequence(
-    ['scripts', 'styles', 'html', 'copy'],
+    ['scripts', 'styles', 'fonts', 'html', 'copy'],
     ['vulcanize'],
     cb
   );
@@ -46,6 +46,11 @@ gulp.task('styles', function() {
     .pipe(rename({suffix: '.min'}))
     .pipe(minifycss())
     .pipe(gulp.dest('dist/assets/css'));
+});
+
+gulp.task('fonts', function() {
+  return gulp.src('src/fonts/**/*')
+    .pipe(gulp.dest('dist/assets/fonts'));
 });
 
 gulp.task('html', function() {
@@ -89,8 +94,9 @@ var DEPLOY_DIR = process.env.HOME
 // Deploy the extension to where we can debug it
 gulp.task('deploy', ['undeploy', 'default'], function() {
   return gulp.src('dist/**/*')
+    .pipe(addsrc('.debug'))
     .pipe(gulp.dest(DEPLOY_DIR))
-    .pipe(notify( { message: 'Extension was redeployed!', onLast: true }));
+    .pipe(notify( { message: 'Extension was deployed!', onLast: true }));
 });
 
 // Uninstall the extension

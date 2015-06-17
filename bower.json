@@ -10,6 +10,9 @@
   ],
   "dependencies": {
     "polymer": "Polymer/polymer#~1.0.3",
-    "paper-checkbox": "PolymerElements/paper-checkbox#~1.0.3"
+    "paper-checkbox": "PolymerElements/paper-checkbox#~1.0.3",
+    "paper-header-panel": "PolymerElements/paper-header-panel#~1.0.2",
+    "paper-toolbar": "PolymerElements/paper-toolbar#~1.0.2",
+    "paper-styles": "PolymerElements/paper-styles#~1.0.4"
   }
 }

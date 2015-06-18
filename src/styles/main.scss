@@ -1,7 +1,25 @@
 
 /** disable paper ripple effects wince it appears to be broken when embedded in adobe */
-html /deep/ paper-ripple, paper-ripple {
+/*html /deep/ paper-ripple, paper-ripple {
   display: none !important;
+}*/
+
+paper-checkbox {
+  margin: 10px;
 }
+
+.content {
+  margin: 20px;
+}
+
+.button-1 {
+  color: green;
+}
+
+.button-2 {
+  color: blue;
+}
+
+
 
 
